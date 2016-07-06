@@ -1,0 +1,2 @@
+2016-07-06 11:24:10,388 [Thread-2:139724439529216] [blog.views:11] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
+2016-07-06 11:24:12,213 [Thread-12:139724439529216] [blog.views:11] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
