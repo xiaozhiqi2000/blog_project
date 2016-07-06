@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.views.global_setting',   #在上下文处理器中定义刚才的方法
             ],
         },
     },
@@ -103,9 +104,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
+STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-]
+)
+
+#网站的基本信息配置
+SITE_NAME='老肖的个人博客'
+SITE_DESC='专注Python开发，欢迎和大家交流'
+WEIBO_SINA='http://weibo.com/u/5451244549'
+WEIBO_TENCENT='http://t.qq.com/xiao_zhi_qi'
+PRO_RSS='https://www.baidu.com'
+PRO_EMAIL='329275108@qq.com'
 
 
 # 自定义日志输出信息

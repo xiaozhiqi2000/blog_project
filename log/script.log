@@ -1,0 +1,16 @@
+2016-07-06 15:44:18,647 [Thread-2:139698802128640] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 18, in <module>
+    from blog import views
+  File "/home/xiaozhiqi/workplace/blog_project/blog/views.py", line 3
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog/views.py on line 3, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details

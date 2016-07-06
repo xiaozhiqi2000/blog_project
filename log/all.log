@@ -2,3 +2,8 @@
 2016-07-06 11:24:03,542 [Dummy-1:139724450854656] [django.db.backends:89] [utils:execute] [DEBUG]- (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
 2016-07-06 11:24:10,388 [Thread-2:139724439529216] [blog.views:11] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
 2016-07-06 11:24:12,213 [Thread-12:139724439529216] [blog.views:11] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
+2016-07-06 15:44:11,301 [Dummy-1:139698813454080] [django.db.backends:89] [utils:execute] [DEBUG]- (0.000) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+2016-07-06 15:44:11,304 [Dummy-1:139698813454080] [django.db.backends:89] [utils:execute] [DEBUG]- (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
+2016-07-06 15:44:46,411 [Thread-8:139698793473792] [blog.views:26] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
+2016-07-06 15:59:19,570 [Dummy-1:140630909605632] [django.db.backends:89] [utils:execute] [DEBUG]- (0.002) QUERY = "\n            SELECT name, type FROM sqlite_master\n            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'\n            ORDER BY name" - PARAMS = (); args=None
+2016-07-06 15:59:19,575 [Dummy-1:140630909605632] [django.db.backends:89] [utils:execute] [DEBUG]- (0.000) QUERY = u'SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"' - PARAMS = (); args=()
