@@ -337,3 +337,9 @@ Traceback (most recent call last):
   File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
     raise errorclass, errorvalue
 IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-07-10 15:15:15,105 [Thread-26:140711761491712] [django.request:170] [base:get_response] [WARNING]- Not Found: /uploads/2016/07/little-cat.jpg
+2016-07-10 15:16:05,359 [Thread-2:140650414528256] [django.request:170] [base:get_response] [WARNING]- Not Found: /uploads/2016/07/little-cat.jpg
+2016-07-10 15:16:06,139 [Thread-3:140650414528256] [django.request:170] [base:get_response] [WARNING]- Not Found: /uploads/2016/07/little-cat.jpg
+2016-07-10 15:16:06,394 [Thread-4:140650414528256] [django.request:170] [base:get_response] [WARNING]- Not Found: /uploads/2016/07/little-cat.jpg
+2016-07-10 15:16:06,589 [Thread-5:140650414528256] [django.request:170] [base:get_response] [WARNING]- Not Found: /uploads/2016/07/little-cat.jpg
+2016-07-10 15:16:06,772 [Thread-6:140650414528256] [django.request:170] [base:get_response] [WARNING]- Not Found: /uploads/2016/07/little-cat.jpg
