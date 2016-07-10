@@ -125,7 +125,7 @@ SITE_DESC='专注Python开发，欢迎和大家交流'
 WEIBO_SINA='http://weibo.com/u/5451244549'
 WEIBO_TENCENT='http://t.qq.com/xiao_zhi_qi'
 PRO_RSS='https://www.baidu.com'
-PRO_EMAIL='329275108@qq.com'
+PRO_EMAIL='https://mail.qq.com/cgi-bin/loginpage'
 
 
 # 自定义日志输出信息

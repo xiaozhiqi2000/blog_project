@@ -3,6 +3,7 @@
 import logging
 from django.shortcuts import render
 from django.conf import settings  #需要导入这个模块
+from blog.models import Category
 
 logger = logging.getLogger('blog.views')
 
@@ -22,8 +23,8 @@ def global_setting(request):
 
 def index(request):
     try:
-        file = open('test.txt','r')
+        category_list = Category.objects.all()
     except Exception as e:
         logger.error(e)
 
-    return render(request,'index.html',locals())
+    return render(request,'index.html',{'category_list':category_list})
