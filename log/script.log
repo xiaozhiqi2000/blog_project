@@ -14,3 +14,326 @@ Traceback (most recent call last):
     from blog import views
   File "/home/xiaozhiqi/workplace/blog_project/blog/views.py", line 3
 SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog/views.py on line 3, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-08 10:36:27,753 [Thread-5:139911931643648] [django.request:170] [base:get_response] [WARNING]- Not Found: /favicon.ico
+2016-07-08 11:18:34,893 [Thread-2:140631428749056] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:18:37,039 [Thread-3:140631428749056] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:19:11,106 [Thread-2:140110232065792] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:19:20,365 [Thread-7:140110232065792] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:19:34,544 [Thread-2:140590477760256] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:19:35,950 [Thread-3:140590477760256] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:19:36,738 [Thread-4:140590477760256] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:19:37,460 [Thread-5:140590477760256] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1456, in changeform_view
+    ModelForm = self.get_form(request, obj)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 703, in get_form
+    % (e, self.__class__.__name__))
+FieldError: Unknown field(s) (date_publish) specified for Article. Check fields/fieldsets/exclude attributes of class ArticleAdmin.
+2016-07-08 11:30:31,517 [Thread-15:139920386221824] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1467, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1078, in save_model
+    obj.save()
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 129, in execute
+    six.reraise(utils.IntegrityError, utils.IntegrityError(*tuple(e.args)), sys.exc_info()[2])
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (1048, "Column 'user_id' cannot be null")
+2016-07-08 11:32:27,113 [Thread-21:139920169498368] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /admin/blog/article/add/
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 132, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/views/decorators/cache.py", line 57, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1516, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 34, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 110, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 30, in bound_func
+    return func.__get__(self, type(self))(*args2, **kwargs2)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/utils/decorators.py", line 145, in inner
+    return func(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1467, in changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/contrib/admin/options.py", line 1078, in save_model
+    obj.save()
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
+    using=using, raw=raw)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 129, in execute
+    six.reraise(utils.IntegrityError, utils.IntegrityError(*tuple(e.args)), sys.exc_info()[2])
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
+    return self.cursor.execute(query, args)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+IntegrityError: (1048, "Column 'user_id' cannot be null")
