@@ -17,17 +17,25 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'desc','click_count',)
     list_display_links = ('title', 'desc',)
     list_editable = ('click_count',)
-#
-#
-#     fieldsets = (
-#         (None, {
-#             'fields': ('title', 'desc', 'content')
-#         }),
-#         ('高级设置', {
-#             'classes': ('collapse',),
-#             'fields': ('click_count', 'is_recommend',)
-#         }),
-#     )
+
+
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'desc', 'content','user','category','tag',)
+        }),
+        ('高级设置', {
+            'classes': ('collapse',),
+            'fields': ('click_count', 'is_recommend',)
+        }),
+    )
+
+    # 将kindeditor富文本编辑器引入
+    class Media:
+        js = (
+            '/static/js/kindeditor-4.1.10/kindeditor-min.js',
+            '/static/js/kindeditor-4.1.10/lang/zh_CN.js',
+            '/static/js/kindeditor-4.1.10/config.js',
+        )
 
 admin.site.register(User)
 admin.site.register(Tag)
