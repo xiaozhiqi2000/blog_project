@@ -30,7 +30,7 @@ class Tag(models.Model):
     class Meta:
         verbose_name = '标签'
         verbose_name_plural = verbose_name
-        ordering = ['-id']
+        ordering = ['id']
 
     def __unicode__(self):
         return self.name
