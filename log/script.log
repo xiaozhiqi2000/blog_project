@@ -648,3 +648,4 @@ TemplateSyntaxError: Could not parse the remainder: '{{' from '{{'
 2016-07-10 22:25:19,269 [Thread-123:139784860718848] [django.request:170] [base:get_response] [WARNING]- Not Found: /ad/2016/07/a2.jpg
 2016-07-10 22:25:19,282 [Thread-124:139784878028544] [django.request:170] [base:get_response] [WARNING]- Not Found: /ad/2016/07/a3.jpg
 2016-07-10 22:25:19,284 [Thread-125:139784843933440] [django.request:170] [base:get_response] [WARNING]- Not Found: /ad/2016/07/a4.jpg
+2016-07-10 23:26:14,451 [Thread-33:140612902004480] [django.request:170] [base:get_response] [WARNING]- Not Found: /index.html

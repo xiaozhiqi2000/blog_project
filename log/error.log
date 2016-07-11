@@ -54,3 +54,37 @@
 2016-07-10 18:45:47,736 [Thread-327:140118922954496] [blog.views:27] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
 2016-07-10 18:45:47,930 [Thread-337:140118897514240] [blog.views:27] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
 2016-07-10 18:45:48,066 [Thread-347:140118914299648] [blog.views:27] [views:index] [ERROR]- [Errno 2] No such file or directory: 'test.txt'
+2016-07-10 22:41:02,763 [Thread-2:140217023432448] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:42:43,630 [Thread-12:140216773891840] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:48:02,104 [Thread-29:140217006384896] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:49:38,632 [Thread-39:140217006384896] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:49:39,840 [Thread-49:140216765499136] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:49:47,879 [Thread-59:140216765499136] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:49:48,999 [Thread-69:140216765499136] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:53:01,328 [Thread-79:140217014777600] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:53:05,668 [Thread-89:140216790677248] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:53:48,709 [Thread-99:140217014777600] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:53:59,164 [Thread-109:140217014777600] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:55:15,413 [Thread-119:140216782284544] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:55:16,332 [Thread-129:140216790677248] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:55:17,115 [Thread-139:140217006384896] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:55:17,740 [Thread-149:140217006384896] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:55:17,935 [Thread-159:140216773891840] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:55:18,146 [Thread-169:140217014777600] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:59:34,132 [Thread-179:140216765499136] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:59:36,139 [Thread-189:140216773891840] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 22:59:42,302 [Thread-199:140216773891840] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:06:06,153 [Thread-200:140216773891840] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:19,227 [Thread-210:140217006384896] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:19,988 [Thread-220:140216790677248] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:20,211 [Thread-230:140216765499136] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:20,431 [Thread-240:140217014777600] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:20,630 [Thread-250:140216773891840] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:20,836 [Thread-260:140216765499136] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:21,334 [Thread-270:140216765499136] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:10:21,560 [Thread-280:140216790677248] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:11:12,226 [Thread-2:139712681293568] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:11:51,809 [Thread-2:140239757027072] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:11:52,040 [Thread-12:140239757027072] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:11:52,313 [Thread-22:140239649621760] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-10 23:11:53,289 [Thread-32:140239658014464] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
