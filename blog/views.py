@@ -59,6 +59,10 @@ def index(request):
         tag_list = Tag.objects.all()
         # 友情链接
         links_list = Links.objects.all()
+        # 浏览排行
+        click_top_list = Article.objects.all().order_by('-click_count')[:6]
+        # 站长推荐
+        is_recommend_list = Article.objects.filter(is_recommend=True)[:6]
 
     except Exception as e:
         logger.error(e)
@@ -83,6 +87,10 @@ def archive(request):
             article_list = paginator.page(page)  # 获取当前页显示的数据
         except (EmptyPage, InvalidPage, PageNotAnInteger):
             article_list = paginator.page(1)
+        # 标签云
+        tag_list = Tag.objects.all()
+        # 友情链接
+        links_list = Links.objects.all()
     except Exception as e:
         logger.error(e)
 
