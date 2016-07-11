@@ -129,7 +129,7 @@ window.onload = function ()
         {% for archive in archive_list %}
         <li>
           <p>
-              <span class="tutime font-size-18"><a href='{% url 'archive' %}?year={{ archive | slice:':4' }}&month={{ archive | slice:'5:7' }}'>{{ archive }}</a></span>
+              <span class="tutime font-size-18"><a href="{% url 'archive' %}?year={{ archive | slice:':4' }}&month={{ archive | slice:'5:7' }}" target="_blank">{{ archive }}</a></span>
           </p>
         </li>
         {% endfor %}
@@ -139,7 +139,7 @@ window.onload = function ()
       <h3>友情链接</h3>
       <ul>
         {% for link in links_list %}
-        <li><a href="/">{{ link.title }}</a></li>
+        <li><a href="{{ link.callback_url }}" target="_blank">{{ link.title }}</a></li>
         {% endfor %}
       </ul>
     </div>
