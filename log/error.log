@@ -88,3 +88,10 @@
 2016-07-10 23:11:52,040 [Thread-12:140239757027072] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
 2016-07-10 23:11:52,313 [Thread-22:140239649621760] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
 2016-07-10 23:11:53,289 [Thread-32:140239658014464] [blog.views:41] [views:index] [ERROR]- global name 'GET' is not defined
+2016-07-11 10:45:23,435 [Thread-2:140698487211776] [blog.views:51] [views:index] [ERROR]- cursor() takes exactly 1 argument (2 given)
+2016-07-11 10:45:49,067 [Thread-12:140698478032640] [blog.views:51] [views:index] [ERROR]- cursor() takes exactly 1 argument (2 given)
+2016-07-11 10:46:10,376 [Thread-22:140698478032640] [blog.views:51] [views:index] [ERROR]- cursor() takes exactly 1 argument (2 given)
+2016-07-11 14:01:38,918 [Thread-2:140166581380864] [blog.views:61] [views:index] [ERROR]- 'list' object has no attribute 'strftime'
+2016-07-11 14:01:47,236 [Thread-12:140166547023616] [blog.views:61] [views:index] [ERROR]- 'list' object has no attribute 'strftime'
+2016-07-11 14:06:12,122 [Thread-2:139742905964288] [blog.views:61] [views:index] [ERROR]- 'list' object has no attribute 'strftime'
+2016-07-11 16:46:17,588 [Thread-8:140688700208896] [blog.views:78] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
