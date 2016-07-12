@@ -15,16 +15,21 @@ logger = logging.getLogger('blog.views')
 
 def global_setting(request):
 
+    # 基本信息配置
+    SITE_NAME = settings.SITE_NAME,
+    SITE_DESC = settings.SITE_DESC,
+    WEIBO_SINA = settings.WEIBO_SINA,
+    WEIBO_TENCENT = settings.WEIBO_TENCENT,
+    PRO_RSS = settings.PRO_RSS,
+    PRO_EMAIL = settings.PRO_EMAIL,
+    MEDIA_URL = settings.MEDIA_URL,
+
     # 重构一：将分类，广告，文章归档，标签云，友情链接，浏览排序行，站长推荐，评论排行等这些公共数据放入全局
-    # 分类信息获取(导航数据)
+
     category_list = Category.objects.all()
-    # 广告数据
     ad_list = Ad.objects.all()
-    # 文章归档
     archive_list = Article.objects.distinct_date()
-    # 标签云
     tag_list = Tag.objects.all()
-    # 友情链接
     links_list = Links.objects.all()
     # 浏览排行
     click_top_list = Article.objects.all().order_by('-click_count')[:6]
@@ -34,23 +39,7 @@ def global_setting(request):
     # 站长推荐
     is_recommend_list = Article.objects.filter(is_recommend=True)[:6]
 
-    return {
-    'SITE_NAME' : settings.SITE_NAME,
-    'SITE_DESC' : settings.SITE_DESC,
-    'WEIBO_SINA' : settings.WEIBO_SINA,
-    'WEIBO_TENCENT' : settings.WEIBO_TENCENT,
-    'PRO_RSS' : settings.PRO_RSS,
-    'PRO_EMAIL' : settings.PRO_EMAIL,
-    'MEDIA_URL' : settings.MEDIA_URL,
-    'category_list' : category_list,
-    'ad_list' : ad_list,
-    'archive_list' : archive_list,
-    'tag_list' : tag_list,
-    'links_list' : links_list,
-    'click_top_list' : click_top_list,
-    'is_recommend_list' : is_recommend_list,
-    'article_comment_list' : article_comment_list
-    }
+    return locals()
 
 
 def index(request):
