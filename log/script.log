@@ -797,3 +797,210 @@ Traceback (most recent call last):
 SyntaxError: invalid syntax
 2016-07-11 16:33:32,117 [Thread-105:140037220890368] [django.request:170] [base:get_response] [WARNING]- Not Found: /index.html
 2016-07-11 16:34:02,009 [Thread-113:140036997637888] [django.request:170] [base:get_response] [WARNING]- Not Found: /index.html
+2016-07-12 11:00:25,413 [Thread-2:140651841369856] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:00:26,478 [Thread-3:140651832977152] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:00:27,330 [Thread-4:140651824584448] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:00:27,945 [Thread-5:140651816191744] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:11,230 [Thread-2:140542525531904] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:12,090 [Thread-3:140542516877056] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:12,775 [Thread-4:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:13,416 [Thread-5:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:13,633 [Thread-6:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:13,870 [Thread-7:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:14,081 [Thread-8:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:14,574 [Thread-9:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 10
+SyntaxError: Non-ASCII character '\xe9' in file /home/xiaozhiqi/workplace/blog_project/blog_project/urls.py on line 10, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details
+2016-07-12 11:01:36,531 [Thread-10:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 12, in <module>
+    url(r'^', include(blog.urls)),
+NameError: name 'blog' is not defined
+2016-07-12 11:01:52,828 [Thread-11:140542508484352] [django.request:256] [base:handle_uncaught_exception] [ERROR]- Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/handlers/base.py", line 119, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 366, in resolve
+    for pattern in self.url_patterns:
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 402, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog_project/urls.py", line 12, in <module>
+    url(r'^', include('blog.urls')),
+  File "/home/xiaozhiqi/blog_env/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 33, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/xiaozhiqi/.pyenv/versions/2.7.11/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/xiaozhiqi/workplace/blog_project/blog/urls.py", line 2, in <module>
+    from blog.views import index,archive
+  File "/home/xiaozhiqi/workplace/blog_project/blog/views.py", line 31
+    comment_list = Comment.objects.all(article=)
+                                               ^
+SyntaxError: invalid syntax

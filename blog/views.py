@@ -2,18 +2,38 @@
 
 import logging
 from django.shortcuts import render
-from django.conf import settings  #需要导入这个模块
+#使用settings全局变量需要导入这个模块
+from django.conf import settings
 from django.core.paginator import Paginator,InvalidPage,EmptyPage,PageNotAnInteger  # 分页器的使用
 from blog.models import *
-from django.db import connection
-
+# from django.db import connection
+from django.db.models import Count
 
 logger = logging.getLogger('blog.views')
 
-#通过定义一个方法来返回全局配置中的变量
-#setting在templates需要设置这个方法
-#在前端使用key，例如{{SITE_NAME}}来调用
+# 通过定义一个方法来返回全局配置中的变量,setting在templates需要设置这个方法,在前端使用key，例如{{SITE_NAME}}来调用
+
 def global_setting(request):
+
+    # 重构一：将分类，广告，文章归档，标签云，友情链接，浏览排序行，站长推荐，评论排行等这些公共数据放入全局
+    # 分类信息获取(导航数据)
+    category_list = Category.objects.all()
+    # 广告数据
+    ad_list = Ad.objects.all()
+    # 文章归档
+    archive_list = Article.objects.distinct_date()
+    # 标签云
+    tag_list = Tag.objects.all()
+    # 友情链接
+    links_list = Links.objects.all()
+    # 浏览排行
+    click_top_list = Article.objects.all().order_by('-click_count')[:6]
+    # 评论排行
+    comment_count_list = Comment.objects.values('article').annotate(comment_count=Count('article')).order_by('comment_count')
+    article_comment_list = [Article.objects.get(pk=comment['article']) for comment in comment_count_list]
+    # 站长推荐
+    is_recommend_list = Article.objects.filter(is_recommend=True)[:6]
+
     return {
     'SITE_NAME' : settings.SITE_NAME,
     'SITE_DESC' : settings.SITE_DESC,
@@ -21,85 +41,47 @@ def global_setting(request):
     'WEIBO_TENCENT' : settings.WEIBO_TENCENT,
     'PRO_RSS' : settings.PRO_RSS,
     'PRO_EMAIL' : settings.PRO_EMAIL,
-    'MEDIA_URL' : settings.MEDIA_URL
+    'MEDIA_URL' : settings.MEDIA_URL,
+    'category_list' : category_list,
+    'ad_list' : ad_list,
+    'archive_list' : archive_list,
+    'tag_list' : tag_list,
+    'links_list' : links_list,
+    'click_top_list' : click_top_list,
+    'is_recommend_list' : is_recommend_list,
+    'article_comment_list' : article_comment_list
     }
 
 
 def index(request):
     try:
-        # 分类信息获取(导航数据)
-        category_list = Category.objects.all()
-        # 广告数据
-        ad_list = Ad.objects.all()
-        # 最新文章数据
-        article_list = Article.objects.all()       #获取所有数据
-        paginator = Paginator(article_list,5)     #对取出的数据进行分页,设置10条数据
-        try:
-            page = int(request.GET.get('page',1))  #获取当前页,如果没有则显示第1页
-            article_list = paginator.page(page)    #获取当前页显示的数据
-        except (EmptyPage,InvalidPage,PageNotAnInteger):
-            article_list = paginator.page(1)
-        # 文章归档
-        # 1.先要器去获取到文章中有的年份-月份
-        # 使用values().distinct()是不可行的
-        # Article.objects.values('date_publish').distinct() 2016-07
-        # 使用原生SQL方法
-        # 第1种方式(不可行)
-        # archive_list = Article.objects.raw('SELECT DISTINCT DATE_FORMAT(date_publish, "%Y-%m") as col_date FROM blog_article ORDER BY date_publish')
-        # for archive in archive_list:
-        #    print archive
-        # 第2种方式(不推荐)
-        # cursor = connection.cursor()
-        # cursor.execute('SELECT DISTINCT DATE_FORMAT(date_publish, "%Y-%m") as col_date FROM blog_article ORDER BY date_publish')
-        # row = cursor.fetchall()
-        # print now
-        # 第3种方式，自定义管理器manager
-        archive_list = Article.objects.distinct_date()
-        # 标签云
-        tag_list = Tag.objects.all()
-        # 友情链接
-        links_list = Links.objects.all()
-        # 浏览排行
-        click_top_list = Article.objects.all().order_by('-click_count')[:6]
-        # 站长推荐
-        is_recommend_list = Article.objects.filter(is_recommend=True)[:6]
-
+        article_list = getPage(request,Article.objects.all())
     except Exception as e:
+        print e
         logger.error(e)
-    return render(request,'index.html',locals())   #locals()把当前所有的变量传给前端
+    return render(request,'index.html',locals())
 
 
 def archive(request):
     try:
-        # 分类信息获取(导航数据)
-        category_list = Category.objects.all()
-        # 广告数据
-        ad_list = Ad.objects.all()
-        # 文章归档
-        archive_list = Article.objects.distinct_date()
-        # 先获取客户端提交的信息
         year = request.GET.get('year',None)
         month = request.GET.get('month',None)
-        article_list = Article.objects.filter(date_publish__icontains=year+'-'+month)  # 获取所有数据
-        paginator = Paginator(article_list, 5)  # 对取出的数据进行分页,设置10条数据
-        try:
-            page = int(request.GET.get('page', 1))  # 获取当前页,如果没有则显示第1页
-            article_list = paginator.page(page)  # 获取当前页显示的数据
-        except (EmptyPage, InvalidPage, PageNotAnInteger):
-            article_list = paginator.page(1)
-        # 标签云
-        tag_list = Tag.objects.all()
-        # 友情链接
-        links_list = Links.objects.all()
+        article_list = Article.objects.filter(date_publish__icontains=year+'-'+month)
+
+        article_list = getPage(request,article_list)
     except Exception as e:
         logger.error(e)
-
     return render(request, 'archive.html', locals())
 
-
-
-
-
+# 重构三：对分页代码的重构
+def getPage(request,article_list):
+    paginator = Paginator(article_list, 5)
+    try:
+        page = int(request.GET.get('page', 1))
+        article_list = paginator.page(page)
+    except (EmptyPage, InvalidPage, PageNotAnInteger):
+        article_list = paginator.page(1)
+    return article_list
 
 
 

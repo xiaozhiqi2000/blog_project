@@ -95,3 +95,9 @@
 2016-07-11 14:01:47,236 [Thread-12:140166547023616] [blog.views:61] [views:index] [ERROR]- 'list' object has no attribute 'strftime'
 2016-07-11 14:06:12,122 [Thread-2:139742905964288] [blog.views:61] [views:index] [ERROR]- 'list' object has no attribute 'strftime'
 2016-07-11 16:46:17,588 [Thread-8:140688700208896] [blog.views:78] [views:archive] [ERROR]- unsupported operand type(s) for +: 'NoneType' and 'str'
+2016-07-12 15:10:16,728 [Thread-2:139985032140544] [blog.views:70] [views:archive] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2016-07-12 15:10:22,229 [Thread-3:139985032140544] [blog.views:70] [views:archive] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2016-07-12 15:13:17,281 [Thread-2:140348244977408] [blog.views:59] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2016-07-12 15:13:19,575 [Thread-12:140348236060416] [blog.views:71] [views:archive] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2016-07-12 15:13:25,674 [Thread-13:140348236060416] [blog.views:59] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2016-07-12 15:13:25,851 [Thread-14:140348244977408] [blog.views:59] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)

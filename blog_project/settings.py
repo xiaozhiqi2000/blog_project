@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'blog.views.global_setting',   #在上下文处理器中定义刚才的方法
+                'blog.views.global_setting',   #在上下文处理器中定义刚才的方法,每次都会调用这个方法
             ],
         },
     },
