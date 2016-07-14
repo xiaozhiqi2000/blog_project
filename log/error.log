@@ -101,3 +101,8 @@
 2016-07-12 15:13:19,575 [Thread-12:140348236060416] [blog.views:71] [views:archive] [ERROR]- getPage() takes exactly 2 arguments (1 given)
 2016-07-12 15:13:25,674 [Thread-13:140348236060416] [blog.views:59] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
 2016-07-12 15:13:25,851 [Thread-14:140348244977408] [blog.views:59] [views:index] [ERROR]- getPage() takes exactly 2 arguments (1 given)
+2016-07-14 14:26:33,986 [Thread-11:140387126757120] [blog.views:189] [views:do_login] [ERROR]- Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-07-14 14:30:21,346 [Thread-27:140089015400192] [blog.views:165] [views:do_reg] [ERROR]- Reverse for '' with arguments '()' and keyword arguments '{}' not found. 0 pattern(s) tried: []
+2016-07-14 16:27:25,977 [Thread-176:139904197588736] [blog.views:112] [views:article] [ERROR]- invalid literal for int() with base 10: ''
+2016-07-14 16:28:22,836 [Thread-177:139904197588736] [blog.views:112] [views:article] [ERROR]- invalid literal for int() with base 10: ''
+2016-07-14 16:28:35,695 [Thread-181:139904155625216] [blog.views:112] [views:article] [ERROR]- invalid literal for int() with base 10: ''

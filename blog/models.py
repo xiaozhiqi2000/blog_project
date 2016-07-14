@@ -13,6 +13,7 @@ class User(AbstractUser):
                           verbose_name='QQ号码')
     mobile = models.CharField(max_length=11,blank=True,null=True,
                               unique=True,verbose_name='手机号码')
+    url = models.URLField(max_length=100,blank=True,null=True,verbose_name='个人网页地址')
 
     class Meta:
         verbose_name = '用户'
@@ -88,6 +89,9 @@ class Article(models.Model):
 #评论
 class Comment(models.Model):
     content = models.TextField(verbose_name='评论内容')
+    username = models.CharField(max_length=30,blank=True,null=True,verbose_name='用户名')
+    email = models.EmailField(max_length=50,blank=True,null=True,verbose_name='邮箱地址')
+    url = models.URLField(max_length=100, blank=True, null=True, verbose_name='个人网页地址')
     date_publish = models.DateTimeField(auto_now_add=True,verbose_name='发布时间')
     user = models.ForeignKey(User,blank=True,null=True,verbose_name='用户')
     article = models.ForeignKey(Article,blank=True,null=True,verbose_name='文章')
