@@ -1,0 +1,521 @@
+1、引用静态文件的两种方法
+settings配置：
+STATICFILES_DIRS = (
+    os.path.join('BASE_DIR','static'),
+)
+
+html配置：
+第一种：
+{% load staticfiles %}
+'{% static 'css/login.css' %}'
+
+第二种：
+'/static/css/login.css'
+
+
+2、日志器的使用
+
+settings配置：
+# 自定义日志输出信息
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}  #日志格式
+    },
+    'filters': {
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+            },
+        'default': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': 'log/all.log',                #日志输出文件
+            'maxBytes': 1024*1024*5,                  #文件大小
+            'backupCount': 5,                         #备份份数
+            'formatter':'standard',                   #使用哪种formatters日志格式
+        },
+        'error': {
+            'level':'ERROR',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': 'log/error.log',
+            'maxBytes':1024*1024*5,
+            'backupCount': 5,
+            'formatter':'standard',
+            },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+        'request_handler': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': 'log/script.log',
+            'maxBytes': 1024*1024*5,
+            'backupCount': 5,
+            'formatter':'standard',
+            },
+        'scprits_handler': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename':'log/script.log',
+            'maxBytes': 1024*1024*5,
+            'backupCount': 5,
+            'formatter':'standard',
+            }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['default', 'console'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'django.request': {
+            'handlers': ['request_handler'],
+            'level': 'DEBUG',
+            'propagate': False,
+            },
+        'scripts': {
+            'handlers': ['scprits_handler'],
+            'level': 'INFO',
+            'propagate': False
+        },
+        'blog.views': {
+            'handlers': ['default', 'error'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+    }
+}
+
+
+views.py配置：
+import loging
+
+logger = logging.getLogger('blog.views')
+
+更多：https://docs.djangoproject.com/en/1.9/topics/logging/
+
+
+
+3、setting中的全局变量在views调用的2种方法
+settings配置：
+
+# 网站的基本信息配置
+SITE_NAME = '老肖的个人博客'
+SITE_DESC = '专注python开发，欢迎和大家交流'
+WEIBO_SINA = 'http://weibo.sina.com'
+WEIBO_TENCENT = 'http://weibo.qq.com'
+PRO_RSS = 'http://www.baidu.com'
+PRO_EMAIL = 'http://www.ithome.com'
+
+
+views.py配置：
+第一种：比较不方便
+from django.conf import settings
+
+def index(request):
+    site_name = settings.SITE_NAME
+    return render(request,'index.html',{'site_name':site_name})
+
+第二种：比较常用
+from django.conf import setttings
+
+def global_setting(request):
+    return {
+        'SITE_NAME': settings.SITE_NAME,
+        'SITE_DESC': settings.SITE_DESC,
+        'WEIBO_SINA':settings.WEIBO_SINA,
+        'WEIBO_TENCENT': settings.WEIBO_TENCENT,
+        'PRO_RSS': settings.PRO_RSS,
+        'PRO_EMAIL': settings.PRO_EMAIL,
+    }    
+
+    
+然后在settings中设置：
+TEMPLATES = [
+...
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.contrib.messages.context_processors.messages',
+                'blog.views.global_settings',   # 将上面的函数注册到这个上下文切换中,这样每个都调用这个全局配置
+            ],
+...
+]
+
+
+HTML中能全局调用：
+{{ SITE_NAME }}
+
+
+4、用户信息表继承django的AbstractUser，有分组和权限控制的功能
+class User(AbstractUser):
+    avatar = models.ImageField(upload_to='avatar/%Y/%m', default='avatar/default.png',
+                               max_length=200, blank=True, null=True, verbose_name='用户头像')
+    qq = models.CharField(max_length=20, blank=True, null=True, verbose_name='QQ号码')
+    mobile = models.CharField(max_length=11, blank=True, null=True, unique=True, verbose_name='手机号码')
+
+    class Meta:
+        verbose_name = '用户'
+        verbose_name_plural = verbose_name
+        ordering = ['-id']
+
+    def __str__(self):
+        return self.username
+
+
+settings配置：
+# 由于AbstractUser中也有一个User类,所以Django不知道使用哪个类,所以需要在settings中声明以下
+# 自定义用户model
+AUTH_USER_MODEL = 'blog.User'
+
+
+5、增加富文本编辑器
+常见的富文本编辑器：
+    ckeditor、
+    ueditor(支持java,php,默认不支持python需要修改代码)、
+    kindeditor、
+    tinymce、...
+
+django-admin中添加富文本编辑器的几种方式：
+    (1)使用第三方的一些库，如django-ckeditor
+    (https://pypi.python.org/pypi/django-ckeditor)
+    (2)在admin中定义富文本编辑器的widget
+    (3)通过定义ModelAdmin的媒体文件
+
+步骤：
+    (1)下载kindeditor
+    (2)定义ModelAdmin的媒体文件
+    class Media:
+            js = (
+                '/static/js/kindeditor-4.1.10/kindeditor-min.js',
+                '/static/js/kindeditor-4.1.10/lang/zh_CN.js',
+                '/static/js/kindeditor-4.1.10/config.js',
+            )
+    (3)修改kindeditor的配置文件,在js目录创建config.js文件并配置
+    KindEditor.ready(function(K) {
+            K.create('textarea[name=content]',{
+                width:500,
+                height:200,
+            });
+        });
+    
+    
+    
+    
+admin的一些配置：
+from django.contrib import admin
+from blog import models
+
+class ArticleAdmin(admin.ModelAdmin):
+
+    list_display = ('id','title','desc','content','click_count','is_recommend','date_publish',)
+    list_display_links = ('id','title','desc','content','is_recommend','date_publish',)
+    list_editable = ('click_count',)
+    list_filter = ('title','date_publish',)
+    
+    class Media:
+        js = (
+            '/static/js/kindeditor-4.1.10/kindeditor-min.js',
+            '/static/js/kindeditor-4.1.10/lang/zh_CN.js',
+            '/static/js/kindeditor-4.1.10/config.js',
+        )
+
+admin.site.register(models.Article,ArticleAdmin)
+
+
+config.js配置：
+修改kindeditor的配置文件,在js目录下kindeditor-4.1.10目录下创建config.js文件并配置
+KindEditor.ready(function(K) {
+        K.create('textarea[name=content]',{
+            width:800,
+            height:400,
+        });
+    });
+
+
+富文本编辑器中上传的接口：
+(1)urls配置：
+from blog.upload import upload_image
+
+url(r'^admin/upload/(?P<dir_name>[^/]+)$', upload_image, name='upload_image'),
+
+
+(2)blog/upload.py:
+
+# -*- coding: utf-8 -*-
+from django.http import HttpResponse
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+import os
+import uuid
+import json
+import datetime as dt
+
+@csrf_exempt
+def upload_image(request, dir_name):
+    ##################
+    #  kindeditor图片上传返回数据格式说明：
+    # {"error": 1, "message": "出错信息"}
+    # {"error": 0, "url": "图片地址"}
+    ##################
+    
+    result = {"error": 1, "message": "上传出错"}
+    files = request.FILES.get("imgFile", None)
+    if files:
+        result =image_upload(files, dir_name)
+    return HttpResponse(json.dumps(result), content_type="application/json")
+
+#目录创建
+def upload_generation_dir(dir_name):
+    today = dt.datetime.today()
+    dir_name = dir_name + '/%d/%d/' %(today.year,today.month)
+    if not os.path.exists(settings.MEDIA_ROOT + dir_name):
+        os.makedirs(settings.MEDIA_ROOT + dir_name)
+    return dir_name
+
+# 图片上传
+def image_upload(files, dir_name):
+    #允许上传文件类型
+    allow_suffix =['jpg', 'png', 'jpeg', 'gif', 'bmp']
+    file_suffix = files.name.split(".")[-1]
+    if file_suffix not in allow_suffix:
+        return {"error": 1, "message": "图片格式不正确"}
+    relative_path_file = upload_generation_dir(dir_name)
+    path=os.path.join(settings.MEDIA_ROOT, relative_path_file)
+    if not os.path.exists(path): #如果目录不存在创建目录
+        os.makedirs(path)
+    file_name=str(uuid.uuid1())+"."+file_suffix
+    path_file=os.path.join(path, file_name)
+    file_url = settings.MEDIA_URL + relative_path_file + file_name
+    open(path_file, 'wb').write(files.file.read())  # 保存图片
+    return {"error": 0, "url": file_url}    
+    
+(3)config.js:
+KindEditor.ready(function(K) {
+	K.create('textarea[name="content"]', {
+		width : "800px",
+    	height : "200px",
+		uploadJson: '/admin/upload/kindeditor',
+	});
+});    
+    
+    
+****************************************************************************************    
+http://docs.ckeditor.com/
+http://docs.ckeditor.com/#!/guide/dev_installation
+
+1、下载ckeditor
+2、放置static目录
+3、前端配置
+
+<form method="post" action="/bbs/new_article/" enctype="multipart/form-data">
+
+    {{ article_form }}
+    <input class="btn btn-success pull-right" type="submit" value="发表"/>
+</form>
+
+<script src="/static/plugins/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('id_content')
+</script>    
+    
+****************************************************************************************      
+    
+    
+    
+6、配置上传的功能,settings的设置的目录,urls进行调用
+settings配置：
+# 定义上传目录
+MEDIA_URL = '/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
+
+
+urls配置：
+from django.conf import settings
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^uploads/(?P<path>.*)$',"django.views.static.serve",{"document_root": settings.MEDIA_ROOT,}),
+]
+
+
+model.py配置：
+class User(AbstractUser):
+    avatar = models.ImageField(upload_to='avatar/%Y/%m/%d',
+                               default = 'avatar/default.png',
+                               max_length=200,blank=True,
+                               null=True,verbose_name='用户头像')
+
+
+
+
+7、模板中使用一对多，多对多
+class Tag(models.Model):
+    name = models.CharField(max_length=30, verbose_name='标签名称')
+    urls = models.URLField(verbose_name='url地址',null='True',blank='True')
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=50, verbose_name='文章标题')
+    desc = models.CharField(max_length=50, verbose_name='文章描述')
+    content = models.TextField(verbose_name='文章内容')
+    click_count = models.IntegerField(default=0, verbose_name='点击次数')
+    is_recommend = models.BooleanField(default=False, verbose_name='是否推荐')
+    date_publish = models.DateTimeField(auto_now_add=True, verbose_name='发布时间')
+    
+    user = models.ForeignKey(User, verbose_name='用户')
+    category = models.ForeignKey(Category, blank=True, null=True, verbose_name='分类')
+    tag = models.ManyToManyField(Tag, verbose_name='标签')
+
+class Comment(models.Model):
+    content = models.TextField(verbose_name='评论内容')
+    date_publish = models.DateTimeField(auto_now_add=True, verbose_name='发布时间')
+    user = models.ForeignKey(User, blank=True, null=True, verbose_name='用户')
+    article = models.ForeignKey(Article, blank=True, null=True, verbose_name='文章')
+
+
+
+
+def index(request):
+
+    article_list = models.Article.objects.all()
+    return render(request,'index.html',locals())
+
+
+    <div class="topnews">
+      <h2>最新文章</h2>
+      {% for article in article_list %}
+      <div class="blogs">
+        <ul>
+          <h3><a href="/">{{ article.title }}</a></h3>
+          <p>{{ article.desc }}</p>
+          <p class="autor">
+              ｛% for tag in article.tag.all %｝      # article与tag是多对多关系
+              <span class="lm f_l"><a href="/">{{ tag.name }}</a></span>
+              {% endfor %}
+              <span class="dtime f_l">{{ article.date_publish | date:"Y-m-d" }}</span>
+              <span class="viewnum f_r">浏览（<a href="#">{{ article.click_count }}</a>）</span>
+              <span class="pingl f_r">评论（<a href="/#">{{ article.comment_set.all.count }}</a>）</span>  # article与comment是一对多关系，这里是反响查找
+          </p>
+        </ul>
+      </div>
+    {% endfor %}
+    </div>
+
+
+
+8、自定义一个文章Model的管理器
+# 1、新加一个数据处理的方法
+# 2、改变原有的queryset
+# https://docs.djangoproject.com/en/1.9/topics/db/managers/
+class ArticleManager(models.Manager):
+    def distinct_date(self):
+        distinct_date_list = []
+        date_list = self.values('date_publish')
+        for date in date_list:
+            date = date['date_publish'].strftime('%Y/%m文章存档')
+            if date not in distinct_date_list:
+                distinct_date_list.append(date)
+        return distinct_date_list
+
+# 文章模型
+class Article(models.Model):
+    title = models.CharField(max_length=50, verbose_name='文章标题')
+    desc = models.CharField(max_length=50, verbose_name='文章描述')
+    content = models.TextField(verbose_name='文章内容')
+    click_count = models.IntegerField(default=0, verbose_name='点击次数')
+    is_recommend = models.BooleanField(default=False, verbose_name='是否推荐')
+    date_publish = models.DateTimeField(auto_now_add=True, verbose_name='发布时间')
+    user = models.ForeignKey(User, verbose_name='用户')
+    category = models.ForeignKey(Category, blank=True, null=True, verbose_name='分类')
+    tag = models.ManyToManyField(Tag, verbose_name='标签')
+    
+    objects = ArticleManager()
+
+
+def index(request):
+
+    archive_list = models.Article.objects.distinct_date()
+
+    return render(request,'index.html',locals())
+
+
+
+
+9、在模板中使用提交的数据
+{{ request.GET.year }}
+
+
+<div id="pagination">
+    <ul id="pagination-flickr">
+    {% if article_list.has_previous %} 
+		<li class="previous"><a href="?page={{ article_list.previous_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}">&laquo;上一页</a></li>
+    {% else %}
+		<li class="previous-off">&laquo;上一页</li>
+    {% endif %}
+
+	<li class="active">{{ article_list.number }}/{{ article_list.paginator.num_pages }}</li>
+    {% if article_list.has_next %}
+		<li class="next"><a href="?page={{ article_list.next_page_number }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}">下一页 &raquo;</a></li>
+    {% else %}
+		<li class="next-off">下一页 &raquo;</li>
+    {% endif %}
+	</ul>
+</div>
+
+
+
+10、分页
+
+
+
+11、登录注册
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
